@@ -1,10 +1,7 @@
 <!--Header -->
 <div class="card">
-    <div class="card-header d-flex justify-content-between">
-        <h4>Category</h4>
-        <a id="category" class="btn btn-outline-success" href="/admin/categories/add" role="button">
-            <i class="fa fa-plus" aria-hidden="true"> Add Category</i>
-        </a>
+    <div class="card-header">
+        <h4>Product</h4>
     </div>
     <!--Body -->
     <div>
@@ -16,16 +13,22 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col" class="text-center">CatID</th>
-                    <th scope="col" class="text-center">CatName</th>
+                    <th scope="col" class="text-center">ProID</th>
+                    <th scope="col" class="text-center">ProName</th>
+                    <th scope="col" class="text-center">TinyDes</th>
+                    <th scope="col" class="text-center">Price</th>
+                    <th scope="col" class="text-center">Quantity</th>
                     <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
                 {{#each this.list}}
                 <tr>
-                    <th scope="col" class="text-center">{{CatID}}</th>
-                    <td scope="col" class="text-center">{{CatName}}</td>
+                    <th scope="col" class="text-center">{{ProID}}</th>
+                    <td scope="col" class="text-center">{{ProName}}</td>
+                    <td scope="col" class="text-center">{{TinyDes}}</td>
+                    <td scope="col" class="text-center">{{Price}}</td>
+                    <td scope="col" class="text-center">{{Quantity}}</td>
                     <td class="text-right text-center">
                         <a class="btn btn-danger" href="javascript:;" role="button"><i class="fa fa-trash"
                                 aria-hidden="true"></i></a>

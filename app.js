@@ -11,6 +11,11 @@ app.get('/', (req, res) => {
 })
 
 app.use('/admin/categories', require('./controllers/category.route'));
+app.use('/admin/products', require('./controllers/product.route'))
+
+app.use((req, res) => {
+    res.render('404', { layout: false })
+})
 
 const PORT = 4000;
 app.listen(PORT, (req, res) => {
