@@ -27,10 +27,10 @@
                     <th scope="col" class="text-center">{{CatID}}</th>
                     <td scope="col" class="text-center">{{CatName}}</td>
                     <td class="text-right text-center">
-                        <a class="btn btn-danger" href="javascript:;" role="button"><i class="fa fa-trash"
-                                aria-hidden="true"></i></a>
-                        <a class="btn btn-primary" href="javascript:;" role="button"><i class="fa fa-edit"
-                                aria-hidden="true"></i></a>
+                        <a class="btn btn-danger" href="javascript:;" role="button" title="Delete"><i
+                                class="fa fa-trash" aria-hidden="true"></i></a>
+                        <a class="btn btn-primary" href="/admin/categories/edit?id={{CatID}}" role="button"
+                            title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a>
                     </td>
                 </tr>
                 {{/each}}

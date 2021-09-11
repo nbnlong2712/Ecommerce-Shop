@@ -1,0 +1,72 @@
+<!--Header -->
+<div class="card">
+    <div class="card-header d-flex justify-content-between">
+        <h4>Product</h4>
+        <a id="product" class="btn btn-outline-success" href="/admin/products/add" role="button">
+            <i class="fa fa-plus" aria-hidden="true"> Add Product</i>
+        </a>
+    </div>
+    <!--Body -->
+    <div>
+        {{# if this.empty}}
+        <div>
+            <h4 class="ml-3 mt-3 mb-3">Data is empty!</h4>
+        </div>
+        {{else}}
+        <div class="card-body">
+            <div class="row">
+                {{#each this.list}}
+                <div class="col-sm-3 mb-3">
+                    <div class="card h-100">
+                        <img src="/public/imgs/sp/{{ProID}}/main_thumbs.jpg" class="card-img-top" alt="{{ProName}}"
+                            title="{{ProName}}: {{f_Price}}">
+                        <div class="card-body">
+                            <h6 class="card-title">{{ProName}}</h6>
+                            <h5 class="card-title text-danger">{{f_Price}}</h5>
+                            <p class="card-text">{{TinyDes}}</p>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <a class="btn btn-sm btn-outline-primary" href="#" role="button">
+                                <i class="fa fa-eye" aria-hidden="true"> Details</i>
+                            </a>
+                            <a class="btn btn-sm btn-outline-success" href="#" role="button">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"> Add to cart</i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            <!--Pagination-->
+            <nav aria-label="...">
+                <ul class="pagination mt-4 justify-content-center">
+
+                    <li class="page-item {{#unless can_go_prev}}disabled{{/unless}}">
+                        <a class="page-link" href="?page={{prev_value}}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    {{#each this.page_items}}
+                    {{#if isActive}}
+                    <li class="page-item active" aria-current="page">
+                        <span class="page-link">{{value}}</span>
+                    </li>
+                    {{else}}
+                    <li class="page-item"><a class="page-link" href="?page={{value}}">{{value}}</a></li>
+                    {{/if}}
+                    {{/each}}
+                    <li class="page-item {{#unless can_go_next}}disabled{{/unless}}">
+                        <a class="page-link" href="?page={{next_value}}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        {{/ if}}
+    </div>
+    <!--Footer -->
+    <div class="card-footer text-muted">
+        Footer
+    </div>
+</div>
